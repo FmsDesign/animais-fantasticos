@@ -3,7 +3,7 @@
 }
 
 .font-m {
-  font: 400 1.125rem/1.5 "Poppins", sans-serif;
+  font: 400 1rem/1.4 "Poppins", sans-serif;
 }
 
 .font-m2 {
@@ -11,7 +11,7 @@
 }
 
 .font-s {
-  font: 400 1rem/1.4 "Poppins", sans-serif;
+  font: 600 0.825rem/1.5 "Poppins", sans-serif;
 }
 
 @media (max-width: 700px) {
