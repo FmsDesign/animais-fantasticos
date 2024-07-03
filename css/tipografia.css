@@ -1,0 +1,21 @@
+.font-title {
+  font: 600 6rem/1.125 "Amarante", serif;
+}
+
+.font-m {
+  font: 400 1.125rem/1.5 "Poppins", sans-serif;
+}
+
+.font-m2 {
+  font: 600 1.125rem/1.5 "Poppins", sans-serif;
+}
+
+.font-s {
+  font: 400 1rem/1.4 "Poppins", sans-serif;
+}
+
+@media (max-width: 700px) {
+  .font-m {
+    font: 400 1rem/1.5 "Poppins", sans-serif;
+  }
+}
