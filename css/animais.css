@@ -2,8 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 40px;
-  margin-top: 24px;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
 }
 
 .animais-img {
@@ -16,7 +15,7 @@
 }
 
 .animais-conteudo p + p {
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 .animais-conteudo h2 {
@@ -30,6 +29,6 @@
   content: "";
   display: inline-block;
   height: 8px;
-  width: 32px;
+  width: 24px;
   background: var(--cor-p1);
 }

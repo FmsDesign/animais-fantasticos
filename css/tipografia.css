@@ -1,5 +1,10 @@
 .font-title {
   font: 600 6rem/1.125 "Amarante", serif;
+  margin-bottom: 24px;
+}
+
+.font-sub-title {
+  font: 600 1.25rem/1.125 "Amarante", serif;
 }
 
 .font-m {
