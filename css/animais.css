@@ -10,6 +10,15 @@
   overflow-y: scroll;
 }
 
+.animais-img::-webkit-scrollbar {
+  width: 8px;
+}
+
+.animais-img::-webkit-scrollbar-thumb {
+  background: var(--cor-p1);
+  border-left: 4px solid var(--cor-p0);
+}
+
 .animais-conteudo {
   margin-bottom: 60px;
 }
@@ -31,4 +40,10 @@
   height: 8px;
   width: 24px;
   background: var(--cor-p1);
+}
+
+@media (max-width: 700px) {
+  .animais {
+    gap: 20px;
+  }
 }

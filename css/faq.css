@@ -1,7 +1,7 @@
 #faq {
   margin-bottom: 120px;
 }
-.faq + .faq {
+.faq dd + dt {
   margin-top: 24px;
 }
 

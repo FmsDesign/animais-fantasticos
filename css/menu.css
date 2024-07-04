@@ -17,3 +17,12 @@
 .menu a:hover {
   color: var(--cor-p4);
 }
+
+@media (max-width: 700px) {
+  .menu-bg {
+    margin-top: 0;
+  }
+  .menu {
+    margin-bottom: 60px;
+  }
+}

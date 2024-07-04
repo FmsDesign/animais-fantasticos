@@ -23,4 +23,7 @@
   .font-m {
     font: 400 1rem/1.5 "Poppins", sans-serif;
   }
+  .font-title {
+    font-size: 4rem;
+  }
 }
