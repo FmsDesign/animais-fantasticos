@@ -1,0 +1,45 @@
+#contato {
+  margin-bottom: 120px;
+}
+.contato {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+
+.contato-end {
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+
+.contato-end a,
+.contato-end span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.contato-end a::before,
+.contato-end span::before {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 12px;
+  background: var(--cor-p1);
+}
+
+@media (max-width: 700px) {
+  #contato {
+    margin-bottom: 60px;
+  }
+  .contato {
+    grid-template-columns: 1fr;
+  }
+
+  .contato img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+}

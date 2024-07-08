@@ -1,0 +1,25 @@
+#faq {
+  margin-bottom: 120px;
+}
+.faq dd + dt {
+  margin-top: 24px;
+}
+
+.faq dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.faq dt::before {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 12px;
+  background: var(--cor-p1);
+}
+
+.faq dd {
+  margin-left: 20px;
+}
