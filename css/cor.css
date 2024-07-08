@@ -93,11 +93,3 @@
 .cor-s3 {
   color: var(--cor-s3);
 }
-
-.ativa {
-  background: red;
-}
-
-html.aumentar {
-  font-size: 150%;
-}
