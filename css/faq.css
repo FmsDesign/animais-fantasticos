@@ -18,8 +18,33 @@
   height: 8px;
   width: 12px;
   background: var(--cor-p1);
+  transition: 0.3s;
 }
 
 .faq dd {
   margin-left: 20px;
+}
+
+.js .js-accordion dt.ativo::before {
+  width: 24px;
+}
+
+.js .js-accordion dt::after {
+  content: "⬎";
+  margin-left: 12px;
+  transition: 0.3s;
+}
+
+.js .js-accordion dt.ativo::after {
+  content: "⬏";
+}
+
+.js .js-accordion dd {
+  display: none;
+  margin-left: 32px;
+}
+
+.js .js-accordion dd.ativo {
+  display: block;
+  animation: show 0.3s;
 }
