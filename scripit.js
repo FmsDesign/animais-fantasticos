@@ -1,16 +1,18 @@
 function initTab() {
-  const tabImg = document.querySelectorAll(".animais-img li");
+  const tabImg = document.querySelectorAll("[data-tab='img'] li");
   const tabConteudo = document.querySelectorAll(
-    ".js-tabConteudo .animais-conteudo"
+    "[data-tab='conteudo'] .animais-conteudo"
   );
 
   if (tabImg.length && tabConteudo.length) {
     function activeTab(index) {
       tabConteudo.forEach((conteudo) => {
         conteudo.classList.remove("ativo");
-        tabConteudo[index].classList.add("ativo");
       });
+      const animacao = tabConteudo[index].dataset.anime;
+      tabConteudo[index].classList.add("ativo", animacao);
     }
+
     tabImg.forEach((img, i) => {
       img.addEventListener("click", () => {
         activeTab(i);
@@ -23,7 +25,9 @@ initTab();
 // função faq
 
 function initAccordion() {
-  const accordionList = document.querySelectorAll(".js-accordion dt");
+  const accordionList = document.querySelectorAll(
+    "[data-anima='accordion'] dt"
+  );
   const ativo = "ativo";
 
   accordionList[0].classList.add(ativo);
@@ -43,7 +47,9 @@ initAccordion();
 
 // scroll suave
 function initScroll() {
-  const linksInternos = document.querySelectorAll(".js-menu a[href^='#']");
+  const linksInternos = document.querySelectorAll(
+    "[data-anima='menu'] a[href^='#']"
+  );
 
   if (linksInternos.length) {
     function scrollSuave(event) {
@@ -63,7 +69,7 @@ function initScroll() {
 initScroll();
 
 function initAnimaScroll() {
-  const sections = document.querySelectorAll(".js-animaScroll");
+  const sections = document.querySelectorAll("[data-anima='scroll']");
   const windowMetade = window.innerHeight * 0.65;
 
   if (sections.length) {
