@@ -30,7 +30,7 @@
       <a href="#animais">ANIMAIS</a>
       <a href="#faq">FAQ</a>
       <a href="#contato">CONTATO</a>
-      <a href="./">DEV ⇀</a>
+      <a data-modal="abrir" href="logn.html">LOGIN</a>
     </nav>
   </header>
 
@@ -160,6 +160,23 @@
     </div>
   </footer>
 
-  <script src="./animacoes.js"></script>
-  <script src="./scripit.js"></script>
+  <section class="modal-container" data-modal="container">
+    <div class="modal">
+      <button data-modal="fechar" class="fechar font-sub-title cor-0">X</button>
+      <form action="">
+        <label class="font-sub-title" for="email">Email</label>
+        <input type="text" for="email" id="email">
+
+        <label class="font-sub-title" for="senha">Senha</label>
+        <input type="password" for="senha" id="senha">
+
+        <button type="submit" class="cor-0 font-m">Entrar</button>
+
+      </form>
+
+    </div>
+  </section>
+
+
+  <script type="module" src="./js/scripit.js"></script>
 </body>
