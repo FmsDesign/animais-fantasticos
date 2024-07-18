@@ -25,12 +25,28 @@
 </head>
 
 <body>
-  <header class=" menu-bg ">
-    <nav class="menu font-s cor-11 container " data-anima="menu">
-      <a href="#animais">ANIMAIS</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contato">CONTATO</a>
-      <a data-modal="abrir" href="logn.html">LOGIN</a>
+  <header>
+    <nav class=" menu-bg ">
+      <ul class="menu font-s cor-11 container " data-anima="menu">
+        <li><a href="#animais">ANIMAIS</a> </li>
+        <li><a href="#faq">FAQ</a> </li>
+        <li><a href="#contato">CONTATO</a> </li>
+
+        <li data-dropdown>
+          <a href="sobre.html">SOBRE</a>
+          <ul class="dropdown-menu">
+            <li><a href="empresa.html"> A Empresa</a></li>
+
+            <li><a href="equipe.html">Equipe</a></li>
+
+            <li><a href="socios.html">Socíos</a></li>
+
+            <li><a href="investidores.html">Investidores</a></li>
+          </ul>
+        </li>
+
+        <li><a data-modal="abrir" href="logn.html">LOGIN</a> </li>
+      </ul>
     </nav>
   </header>
 
@@ -141,9 +157,9 @@
     <h1 class="font-title cor-11 container-2">contato</h1>
 
     <div class="contato container">
-
-      <img src="./img/mapa.png" alt="mapa">
-
+      <div data-tooltip aria-label="Endereço próximo ao estacionamento.">
+        <img class="font-m" src="./img/mapa.png" alt="mapa">
+      </div>
 
       <div class="contato-end">
         <a href="mailto:contato@animaisfantasticos.com" class="font-m cor-11">contato@animaisfantasticos.com</a>
