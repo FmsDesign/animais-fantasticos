@@ -11,6 +11,7 @@ export default function initTab() {
       });
       const animacao = tabConteudo[index].dataset.anime;
       tabConteudo[index].classList.add("ativo", animacao);
+      console.log(animacao);
     }
 
     tabImg.forEach((img, i) => {
