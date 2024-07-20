@@ -19,7 +19,6 @@ export default function initMenuHamburger() {
 
       outsideClick(listaHamburger, eventos, () => {
         listaHamburger.classList.remove("ativo");
-        console.log("clicou aqui");
       });
     }
     eventos.forEach((evento) =>
