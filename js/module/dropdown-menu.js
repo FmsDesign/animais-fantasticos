@@ -6,7 +6,7 @@ export default function initdropDownMenu() {
 
   function onMouseMove(event) {
     event.preventDefault();
-    dropdownBox.classList.add("ativo");
+    dropdownBox.classList.toggle("ativo");
     outsideClick(this, ["click", "touchstart"], function () {
       dropdownBox.classList.remove("ativo");
     });
