@@ -79,3 +79,9 @@
   outline: none;
   border: 2px solid var(--cor-s1);
 }
+
+@media (max-width: 700px) {
+  .modal input {
+    width: 250px;
+  }
+}

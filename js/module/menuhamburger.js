@@ -18,9 +18,9 @@ export default function initMenuHamburger() {
         listaHamburger.classList.add("ativo");
       }
 
-      outsideClick(listaHamburger, eventos, () =>
-        listaHamburger.classList.remove("ativo")
-      );
+      // outsideClick(listaHamburger, eventos, () =>
+      //   listaHamburger.classList.remove("ativo")
+      // );
     }
     eventos.forEach((evento) =>
       btnHamburger.addEventListener(evento, expandMenu)

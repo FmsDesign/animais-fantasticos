@@ -1,6 +1,6 @@
 export default function initAnimaScroll() {
   const sections = document.querySelectorAll("[data-anima='scroll']");
-  const windowMetade = window.innerHeight * 0.8;
+  const windowMetade = window.innerHeight * 0.9;
 
   function animaScroll() {
     sections.forEach((section) => {
