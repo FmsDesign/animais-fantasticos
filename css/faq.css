@@ -25,26 +25,26 @@
   margin-left: 20px;
 }
 
-.js .js-accordion dt.ativo::before {
+[data-anima="accordion"] dt.ativo::before {
   width: 24px;
 }
 
-.js .js-accordion dt::after {
+[data-anima="accordion"] dt::after {
   content: "⬎";
   margin-left: 12px;
   transition: 0.3s;
 }
 
-.js .js-accordion dt.ativo::after {
+[data-anima="accordion"] dt.ativo::after {
   content: "⬏";
 }
 
-.js .js-accordion dd {
+[data-anima="accordion"] dd {
   display: none;
   margin-left: 32px;
 }
 
-.js .js-accordion dd.ativo {
+[data-anima="accordion"] dd.ativo {
   display: block;
   animation: show 0.3s;
 }

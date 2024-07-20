@@ -3,16 +3,20 @@ body {
   background-color: var(--cor-p0);
 }
 ul,
+li,
 h1,
 h2,
 h3,
 h4,
 p,
 dd,
-blockquote {
+blockquote,
+button,
+input {
   margin: 0px;
   padding: 0px;
   list-style: none;
+  border: none;
 }
 li {
   list-style-type: none;
@@ -21,6 +25,7 @@ li {
 a {
   text-decoration: none;
   color: inherit;
+  display: block;
 }
 
 img {
@@ -47,13 +52,13 @@ img {
   background: red;
 }
 
-.js .js-animaScroll {
+[data-anima="scroll"] {
   opacity: 0;
   transform: translate3d(-30px, 0, 0);
   transition: 0.3s;
 }
 
-.js .js-animaScroll.ativo {
+[data-anima="scroll"].ativo {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
