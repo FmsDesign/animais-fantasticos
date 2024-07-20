@@ -62,6 +62,7 @@ function initScroll() {
 }
 initScroll();
 
+// animaçãoScroll
 function initAnimaScroll() {
   const sections = document.querySelectorAll(".js-animaScroll");
   const windowMetade = window.innerHeight * 0.65;
