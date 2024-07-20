@@ -11,7 +11,7 @@ export default function outsideClick(element, events, callback) {
 
   function clicou(event) {
     if (!element.contains(event.target)) {
-      element.removeAttribute(outside, "");
+      element.removeAttribute(outside);
       events.forEach((userEvents) => {
         html.removeEventListener(userEvents, clicou);
       });
