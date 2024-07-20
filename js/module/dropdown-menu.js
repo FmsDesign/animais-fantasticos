@@ -6,12 +6,11 @@ export default function initdropDownMenu() {
 
   function onMouseMove(event) {
     event.preventDefault();
-    dropdownBox.classList.add("ativo");
-    outsideClick(this, ["touchstart"], function () {
+    dropdownBox.classList.toggle("ativo");
+    outsideClick(this, ["click"], function () {
       dropdownBox.classList.remove("ativo");
     });
   }
-  ["click", "touchstart"].forEach((userEvent) => {
-    dropdown.addEventListener(userEvent, onMouseMove);
-  });
+
+  dropdown.addEventListener("click", onMouseMove);
 }
