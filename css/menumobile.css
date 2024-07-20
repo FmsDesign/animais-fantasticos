@@ -6,7 +6,7 @@
 
 .js [data-menu="button"] {
   background: var(--cor-11);
-  padding: 4px 12px;
+  padding: 12px 24px;
   border-radius: 4px;
   margin-left: 20px;
   align-items: center;
@@ -30,6 +30,7 @@
   .mobile-bg {
     background: var(--cor-p1);
     padding: 12px;
+    margin-bottom: 40px;
   }
   .js [data-menu="lista"] {
     display: none;

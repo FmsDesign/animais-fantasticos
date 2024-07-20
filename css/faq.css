@@ -48,3 +48,9 @@
   display: block;
   animation: show 0.3s;
 }
+
+@media (max-width: 700px) {
+  #faq {
+    margin-bottom: 50px;
+  }
+}

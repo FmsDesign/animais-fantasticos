@@ -48,6 +48,7 @@
   .animais {
     gap: 20px;
     grid-template-columns: 100px 1fr;
+    margin-bottom: 60px;
   }
 
   .animais-conteudo p + p {
