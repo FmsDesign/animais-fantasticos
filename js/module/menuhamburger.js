@@ -17,10 +17,11 @@ export default function initMenuHamburger() {
         this.setAttribute("aria-expanded", "false");
         listaHamburger.classList.add("ativo");
       }
-
-      // outsideClick(listaHamburger, eventos, () =>
-      //   listaHamburger.classList.remove("ativo")
-      // );
+      setTimeout(() =>
+        outsideClick(listaHamburger, eventos, () =>
+          listaHamburger.classList.remove("ativo")
+        )
+      );
     }
     eventos.forEach((evento) =>
       btnHamburger.addEventListener(evento, expandMenu)
