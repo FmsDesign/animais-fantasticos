@@ -6,6 +6,8 @@ import initModal from "./module/modal.js";
 import inittooltip from "./module/tooltip.js";
 import initdropDownMenu from "./module/dropdown-menu.js";
 import initMenuHamburger from "./module/menuhamburger.js";
+import initNum from "./module/numeros.js";
+import initHorario from "./module/horario.js";
 
 initAccordion();
 initAnimaScroll();
@@ -15,3 +17,5 @@ initModal();
 inittooltip();
 initdropDownMenu();
 initMenuHamburger();
+initNum();
+initHorario();

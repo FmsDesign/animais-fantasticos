@@ -12,12 +12,10 @@ export default function initMenuHamburger() {
       if (btnFalse === "false") {
         this.setAttribute("aria-expanded", "true");
         listaHamburger.classList.add("ativo");
-      } else {
-        this.setAttribute("aria-expanded", "false");
-        listaHamburger.classList.add("ativo");
       }
 
       outsideClick(listaHamburger, eventos, () => {
+        this.setAttribute("aria-expanded", "false");
         listaHamburger.classList.remove("ativo");
       });
     }

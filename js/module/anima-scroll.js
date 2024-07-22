@@ -9,6 +9,8 @@ export default function initAnimaScroll() {
 
       if (sectionView) {
         section.classList.add("ativo");
+      } else if (section.classList.contains("ativo")) {
+        section.classList.remove("ativo");
       }
     });
   }

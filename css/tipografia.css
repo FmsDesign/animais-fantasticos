@@ -3,6 +3,10 @@
   margin-bottom: 24px;
 }
 
+.font-sub-display {
+  font: 600 3rem/1.125 "Amarante", serif;
+}
+
 .font-sub-title {
   font: 600 1.25rem/1.125 "Amarante", serif;
 }
@@ -25,5 +29,9 @@
   }
   .font-title {
     font-size: 4rem;
+  }
+
+  .font-sub-display {
+    font: 600 2rem/1.125 "Amarante", serif;
   }
 }

@@ -13,20 +13,31 @@
   align-content: start;
 }
 
-.contato-end a,
-.contato-end span {
+.contato-end li {
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
-.contato-end a::before,
-.contato-end span::before {
+.contato-end li::before {
   content: "";
   display: inline-block;
   height: 8px;
   width: 12px;
   background: var(--cor-p1);
+}
+
+[data-semana]::after {
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: red;
+  border-radius: 50%;
+  border: 2px solid var(--cor-10);
+}
+
+[data-semana].aberto::after {
+  background-color: green;
 }
 
 @media (max-width: 700px) {
