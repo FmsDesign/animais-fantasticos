@@ -40,4 +40,4 @@ function createAnimal(animal) {
   return div;
 }
 
-fetchAnimais("../js/animaisapi.json");
+fetchAnimais("../../js/animaisapi.json");
