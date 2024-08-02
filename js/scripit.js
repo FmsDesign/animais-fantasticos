@@ -2,7 +2,7 @@ import Accordion from "./module/accordion.js";
 import ScrollSuave from "./module/scrollsuave.js";
 import TabNav from "./module/animacoes.js";
 import initAnimaScroll from "./module/anima-scroll.js";
-import initModal from "./module/modal.js";
+import Modal from "./module/modal.js";
 import inittooltip from "./module/tooltip.js";
 import initdropDownMenu from "./module/dropdown-menu.js";
 import initMenuHamburger from "./module/menuhamburger.js";
@@ -24,9 +24,14 @@ const tabNav = new TabNav(
 );
 tabNav.init();
 
+const modal = new Modal(
+  "[data-modal='container']",
+  "[data-modal='abrir']",
+  "[data-modal='fechar']"
+);
+modal.init();
+
 initAnimaScroll();
-// initTab();
-initModal();
 inittooltip();
 initdropDownMenu();
 initMenuHamburger();

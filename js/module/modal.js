@@ -1,42 +1,40 @@
-export default function initModal() {
-  const modalAbrir = document.querySelector("[data-modal='abrir']");
-  const modal = document.querySelector("[data-modal='container']");
-  const modalFechar = document.querySelector("[data-modal='fechar']");
-
-  function initLogin(event) {
-    event.preventDefault();
-    modal.classList.toggle("ativo");
+export default class Modal {
+  constructor(containe, abrir, fechar) {
+    this.modalAbrir = document.querySelector(abrir);
+    this.modal = document.querySelector(containe);
+    this.modalFechar = document.querySelector(fechar);
+    this.eventToggleModal = this.eventToggleModal.bind(this);
   }
 
-  function cliqueForaModal(event) {
-    if (event.target === this || event.target === modalFechar) {
-      initLogin(event);
+  //abre ou fecha o modal
+  toggleModal() {
+    this.modal.classList.toggle("ativo");
+  }
+
+  //adiciona toggleModal no evento
+  eventToggleModal(event) {
+    event.preventDefault();
+    this.toggleModal();
+  }
+
+  //fecha o modal ao clicar fora
+  cliqueForaModal(event) {
+    if (event.target === this) {
+      this.classList.toggle("ativo");
     }
   }
-  modalAbrir.addEventListener("click", initLogin);
-  modal.addEventListener("click", cliqueForaModal);
+
+  //eventos
+  addModalEvent() {
+    this.modalAbrir.addEventListener("click", this.eventToggleModal);
+    this.modalFechar.addEventListener("click", this.eventToggleModal);
+    this.modal.addEventListener("click", this.cliqueForaModal);
+  }
+
+  init() {
+    if (this.modal && this.modalAbrir && this.modalFechar) {
+      this.addModalEvent();
+    }
+    return this;
+  }
 }
-
-//otimizado
-// if (modalAbrir && modal && modalFechar) {
-//   function initLogin(event) {
-//     event.preventDefault();
-//     modal.classList.add("ativo");
-//   }
-
-//   modalAbrir.addEventListener("click", initLogin);
-
-//   function fecharLogin() {
-//     modal.classList.remove("ativo");
-//   }
-
-//   modalFechar.addEventListener("click", fecharLogin);
-
-//   function cliqueForaModal(event) {
-//     if (event.target === this) {
-//       fecharLogin();
-//     }
-//   }
-
-//   modal.addEventListener("click", cliqueForaModal);
-// }
