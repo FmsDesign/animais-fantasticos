@@ -1,4 +1,4 @@
-import initAccordion from "./module/accordion.js";
+import Accordion from "./module/accordion.js";
 import ScrollSuave from "./module/scrollsuave.js";
 import initTab from "./module/animacoes.js";
 import initAnimaScroll from "./module/anima-scroll.js";
@@ -14,7 +14,9 @@ import initBitcoin from "./module/bitcoin.js";
 const scrollSuave = new ScrollSuave("[data-anima='menu'] a[href^='#']");
 scrollSuave.init();
 
-initAccordion();
+const accordion = new Accordion("[data-anima='accordion'] dt");
+accordion.init();
+
 initAnimaScroll();
 initTab();
 initModal();
