@@ -6,7 +6,7 @@ import Modal from "./module/modal.js";
 import inittooltip from "./module/tooltip.js";
 import initdropDownMenu from "./module/dropdown-menu.js";
 import initMenuHamburger from "./module/menuhamburger.js";
-import initNum from "./module/numeros.js";
+import ContNum from "./module/numeros.js";
 import initHorario from "./module/horario.js";
 // import initFetchAnimais from "./module/initFetchAnimais.js";
 import initBitcoin from "./module/bitcoin.js";
@@ -31,11 +31,14 @@ const modal = new Modal(
 );
 modal.init();
 
+const numero = new ContNum("[data-animaNum]", "[data-numero]");
+numero.init();
+
 initAnimaScroll();
 inittooltip();
 initdropDownMenu();
 initMenuHamburger();
-initNum();
+// initNum();
 initHorario();
 // initFetchAnimais();
 initBitcoin();
