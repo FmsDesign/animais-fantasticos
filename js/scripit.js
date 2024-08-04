@@ -3,7 +3,7 @@ import ScrollSuave from "./module/scrollsuave.js";
 import TabNav from "./module/animacoes.js";
 import initAnimaScroll from "./module/anima-scroll.js";
 import Modal from "./module/modal.js";
-import inittooltip from "./module/tooltip.js";
+import Tooltip from "./module/tooltip.js";
 import initdropDownMenu from "./module/dropdown-menu.js";
 import initMenuHamburger from "./module/menuhamburger.js";
 import initNum from "./module/numeros.js";
@@ -24,6 +24,9 @@ const tabNav = new TabNav(
 );
 tabNav.init();
 
+const tooltip = new Tooltip("[data-tooltip]", "Esse é o endereço");
+tooltip.init();
+
 const modal = new Modal(
   "[data-modal='container']",
   "[data-modal='abrir']",
@@ -32,7 +35,7 @@ const modal = new Modal(
 modal.init();
 
 initAnimaScroll();
-inittooltip();
+// inittooltip();
 initdropDownMenu();
 initMenuHamburger();
 initNum();
