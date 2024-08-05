@@ -1,33 +1,50 @@
-export default function initNum() {
-  const numeros = document.querySelectorAll("[data-animaNum]");
-  const num = document.querySelector("[data-numero]");
+export default class ContNum {
+  constructor(numeros, container) {
+    this.numeros = document.querySelectorAll(numeros);
+    this.num = document.querySelector(container);
+    this.observadorAtivo = this.observadorAtivo.bind(this);
+  }
 
-  function animaNum() {
-    numeros.forEach((item) => {
-      const total = +item.innerText;
-      const incremento = Math.floor(total / 100);
-      let i = 0;
+  // recebe um elemento do DOMException, com número
+  // incrementa o valor de 0 até o número final
+  static incremento(item) {
+    const incremento = Math.floor(+item.innerText / 100);
+    const total = +item.innerText;
+    let i = 0;
 
-      const callbackNum = setInterval(callback, 25 * Math.random());
-
-      function callback() {
-        i += incremento;
-        item.innerText = i;
-        if (i > total) {
-          clearInterval(callbackNum);
-          item.innerText = total;
-        }
+    this.setInterval = setInterval(() => {
+      i += incremento;
+      item.innerText = i;
+      if (i > total) {
+        clearInterval(this.setInterval);
+        item.innerText = total;
       }
+    }, 25 * Math.random());
+  }
+
+  animaNum() {
+    this.numeros.forEach((item) => {
+      this.constructor.incremento(item);
     });
   }
 
-  function observadorAtivo(evento) {
-    if (evento[0].target.classList.contains("ativo")) {
-      animaNum();
-      observer.disconnect();
+  // funcção que ocorre quando o evento ocorrer
+  observadorAtivo() {
+    if (this.num.classList.contains("ativo")) {
+      this.observer.disconnect();
+      this.animaNum();
     }
   }
 
-  const observer = new MutationObserver(observadorAtivo);
-  observer.observe(num, { attributes: true });
+  // adiciona o evento que verifica se o elemento recebeu a classe "ativo"
+  observador() {
+    this.observer = new MutationObserver(this.observadorAtivo);
+    this.observer.observe(this.num, { attributes: true });
+  }
+
+  init() {
+    if (this.numeros.length && this.num) {
+      this.observador();
+    }
+  }
 }
