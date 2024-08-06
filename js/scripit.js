@@ -7,7 +7,7 @@ import Tooltip from "./module/tooltip.js";
 import DropDownMenu from "./module/dropdown-menu.js";
 import MenuHamburger from "./module/menuhamburger.js";
 import ContNum from "./module/numeros.js";
-import initHorario from "./module/horario.js";
+import Horario from "./module/horario.js";
 import Bitcoin from "./module/bitcoin.js";
 
 const scrollSuave = new ScrollSuave("[data-anima='menu'] a[href^='#']");
@@ -52,4 +52,4 @@ const menuhamburger = new MenuHamburger(
 );
 // menuhamburger.init(); iniciei a classe no constructor como exemplo
 
-initHorario();
+const horario = new Horario("[data-semana]", "aberto");
