@@ -1,41 +1,32 @@
-export default class ContNum {
-  constructor(numero, container) {
-    this.numeros = document.querySelectorAll(numero);
-    this.container = document.querySelector(container);
-    this.observadorAtivo = this.observadorAtivo.bind(this);
+export default class AnimaScroll {
+  constructor(sections) {
+    this.sections = document.querySelectorAll(sections);
+    this.windowMetade = window.innerHeight * 0.9;
+    this.checkDistance = this.checkDistance.bind(this);
   }
-  animaNum() {
-    this.numeros.forEach((item) => {
-      const total = +item.innerText;
-      const incremento = Math.floor(total / 100);
-      let i = 0;
-
-      const callbackNum = setInterval(callback, 25 * Math.random());
-
-      function callback() {
-        i += incremento;
-        item.innerText = i;
-        if (i > total) {
-          clearInterval(callbackNum);
-          item.innerText = total;
-        }
+  getDistance() {
+    this.distance = [...this.sections].map((section) => {
+      const top = section.offsetTop;
+      return {
+        Element: section,
+        offset: Math.floor(top - this.windowMetade),
+      };
+    });
+  }
+  checkDistance() {
+    this.distance.forEach((item) => {
+      if (window.pageYOffset > item.offset) {
+        item.Element.classList.add("ativo");
+      } else if (item.Element.classList.contains("ativo")) {
+        item.Element.classList.remove("ativo");
       }
     });
   }
-
-  observadorAtivo(evento) {
-    if (evento[0].target.classList.contains("ativo")) {
-      this.animaNum();
-      this.observer.disconnect();
-    }
-  }
-
-  observador() {
-    this.observer = new MutationObserver(this.observadorAtivo);
-    this.observer.observe(this.container, { attributes: true });
-  }
-
   init() {
-    this.observador();
+    if (this.sections.length) {
+      this.getDistance();
+      this.checkDistance();
+      window.addEventListener("scroll", this.checkDistance);
+    }
   }
 }
