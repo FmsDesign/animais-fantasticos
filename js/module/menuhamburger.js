@@ -1,26 +1,43 @@
 import outsideClick from "./outsideClick.js";
 
-export default function initMenuHamburger() {
-  const btnHamburger = document.querySelector("[data-menu='button']");
-  const listaHamburger = document.querySelector("[data-menu='lista']");
-  const eventos = ["touchstart"];
+export default class MenuHamburger {
+  constructor(btn, menu, events) {
+    this.btnHamburger = document.querySelector(btn);
+    this.listaHamburger = document.querySelector(menu);
 
-  if (btnHamburger) {
-    function expandMenu(item) {
-      const btnFalse = btnHamburger.getAttribute("aria-expanded");
+    //define o evento
+    if (events === undefined) this.events = ["click"];
+    else this.events = events;
+    this.expandMenu = this.expandMenu.bind(this);
 
-      if (btnFalse === "false") {
-        this.setAttribute("aria-expanded", "true");
-        listaHamburger.classList.add("ativo");
-      }
+    //é possível iniciar a classe diretamente no constructor
+    this.init();
+  }
 
-      outsideClick(listaHamburger, eventos, () => {
-        this.setAttribute("aria-expanded", "false");
-        listaHamburger.classList.remove("ativo");
-      });
+  // abri e fecha o menu
+  expandMenu(item) {
+    const btnFalse = this.btnHamburger.getAttribute("aria-expanded");
+    if (btnFalse === "false") {
+      this.btnHamburger.setAttribute("aria-expanded", "true");
+
+      this.listaHamburger.classList.add("ativo");
     }
-    eventos.forEach((evento) =>
-      btnHamburger.addEventListener(evento, expandMenu)
+    outsideClick(this.listaHamburger, this.events, () => {
+      this.btnHamburger.setAttribute("aria-expanded", "false");
+      this.listaHamburger.classList.remove("ativo");
+    });
+  }
+
+  //evento que aciona o callback
+  addMenuEvent() {
+    this.events.forEach((evento) =>
+      this.btnHamburger.addEventListener(evento, this.expandMenu)
     );
+  }
+  init() {
+    if (this.btnHamburger && this.listaHamburger) {
+      this.addMenuEvent();
+    }
+    return this;
   }
 }

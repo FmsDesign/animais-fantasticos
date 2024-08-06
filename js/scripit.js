@@ -5,7 +5,7 @@ import AnimaScroll from "./module/anima-scroll.js";
 import Modal from "./module/modal.js";
 import Tooltip from "./module/tooltip.js";
 import DropDownMenu from "./module/dropdown-menu.js";
-import initMenuHamburger from "./module/menuhamburger.js";
+import MenuHamburger from "./module/menuhamburger.js";
 import ContNum from "./module/numeros.js";
 import initHorario from "./module/horario.js";
 import Bitcoin from "./module/bitcoin.js";
@@ -45,5 +45,11 @@ animaScroll.init();
 const dropDownMenu = new DropDownMenu("[data-dropdown]");
 dropDownMenu.init();
 
-initMenuHamburger();
+const menuhamburger = new MenuHamburger(
+  "[data-menu='button']",
+  "[data-menu='lista']",
+  ["click"]
+);
+// menuhamburger.init(); iniciei a classe no constructor como exemplo
+
 initHorario();
