@@ -4,7 +4,7 @@ import TabNav from "./module/animacoes.js";
 import AnimaScroll from "./module/anima-scroll.js";
 import Modal from "./module/modal.js";
 import Tooltip from "./module/tooltip.js";
-import initdropDownMenu from "./module/dropdown-menu.js";
+import DropDownMenu from "./module/dropdown-menu.js";
 import initMenuHamburger from "./module/menuhamburger.js";
 import ContNum from "./module/numeros.js";
 import initHorario from "./module/horario.js";
@@ -42,6 +42,8 @@ bitcoin.init();
 const animaScroll = new AnimaScroll("[data-anima='scroll']");
 animaScroll.init();
 
-initdropDownMenu();
+const dropDownMenu = new DropDownMenu("[data-dropdown]");
+dropDownMenu.init();
+
 initMenuHamburger();
 initHorario();
