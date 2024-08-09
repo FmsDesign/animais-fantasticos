@@ -34,7 +34,7 @@ const modal = new Modal(
 );
 modal.init();
 
-const contNum = new ContNum("[data-animaNum]", "[data-numero]");
+const contNum = new ContNum("[data-animaNum]", "[data-numero]", "ativo");
 contNum.init();
 
 const bitcoin = new Bitcoin(".contato-bit");

@@ -1,32 +1,42 @@
-export default class AnimaScroll {
-  constructor(sections) {
-    this.sections = document.querySelectorAll(sections);
-    this.windowMetade = window.innerHeight * 0.9;
-    this.checkDistance = this.checkDistance.bind(this);
+export default class ContNum {
+  constructor(numero, container) {
+    this.numeros = document.querySelectorAll(numero);
+    this.container = document.querySelector(container);
+    this.observadorAtivo = this.observadorAtivo.bind(this);
   }
-  getDistance() {
-    this.distance = [...this.sections].map((section) => {
-      const top = section.offsetTop;
-      return {
-        Element: section,
-        offset: Math.floor(top - this.windowMetade),
-      };
-    });
-  }
-  checkDistance() {
-    this.distance.forEach((item) => {
-      if (window.pageYOffset > item.offset) {
-        item.Element.classList.add("ativo");
-      } else if (item.Element.classList.contains("ativo")) {
-        item.Element.classList.remove("ativo");
+  static incrementarNumero(numero) {
+    const total = +numero.innerText;
+    const incremento = Math.floor(total / 100);
+    let start = 0;
+    const timer = setInterval(() => {
+      start += incremento;
+      numero.innerText = start;
+      if (start > total) {
+        numero.innerText = total;
+        clearInterval(timer);
       }
-    });
+    }, 25 * Math.random());
   }
-  init() {
-    if (this.sections.length) {
-      this.getDistance();
-      this.checkDistance();
-      window.addEventListener("scroll", this.checkDistance);
+
+  animaNum() {
+    this.numeros.forEach((numero) =>
+      this.constructor.incrementarNumero(numero)
+    );
+  }
+
+  observadorAtivo(evento) {
+    if (evento[0].target.classList.contains("ativo")) {
+      this.animaNum();
+      this.observer.disconnect();
     }
+  }
+
+  observador() {
+    this.observer = new MutationObserver(this.observadorAtivo);
+    this.observer.observe(this.container, { attributes: true });
+  }
+
+  init() {
+    this.observador();
   }
 }
