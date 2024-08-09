@@ -40,3 +40,9 @@
 .dropdown-menu li a:hover {
   color: var(--cor-s1);
 }
+
+@media (max-width: 700px) {
+  .dropdown-menu {
+    display: block;
+  }
+}

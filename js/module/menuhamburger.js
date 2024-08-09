@@ -6,7 +6,7 @@ export default class MenuHamburger {
     this.listaHamburger = document.querySelector(menu);
 
     //define o evento
-    if (events === undefined) this.events = ["click"];
+    if (events === undefined) this.events = ["touchstart", "click"];
     else this.events = events;
     this.expandMenu = this.expandMenu.bind(this);
 
@@ -16,10 +16,10 @@ export default class MenuHamburger {
 
   // abri e fecha o menu
   expandMenu(item) {
+    item.preventDefault();
     const btnFalse = this.btnHamburger.getAttribute("aria-expanded");
     if (btnFalse === "false") {
       this.btnHamburger.setAttribute("aria-expanded", "true");
-
       this.listaHamburger.classList.add("ativo");
     }
     outsideClick(this.listaHamburger, this.events, () => {

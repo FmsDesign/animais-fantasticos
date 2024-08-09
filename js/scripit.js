@@ -43,13 +43,12 @@ bitcoin.init();
 const animaScroll = new AnimaScroll("[data-anima='scroll']");
 animaScroll.init();
 
-const dropDownMenu = new DropDownMenu("[data-dropdown]");
+const dropDownMenu = new DropDownMenu(".dropdown-menu");
 dropDownMenu.init();
 
 const menuhamburger = new MenuHamburger(
   "[data-menu='button']",
-  "[data-menu='lista']",
-  ["click"]
+  "[data-menu='lista']"
 );
 // menuhamburger.init(); iniciei a classe no constructor como exemplo
 
