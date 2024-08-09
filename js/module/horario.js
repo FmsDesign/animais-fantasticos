@@ -48,5 +48,6 @@ export default class Horario {
       this.getdata();
       this.aberto();
     }
+    return this;
   }
 }
