@@ -7,7 +7,7 @@ export default class tooltip {
     this.text = text;
   }
 
-  criarTooltipbox(element) {
+  criarTooltipbox() {
     const tooltipBox = document.createElement("div");
     tooltipBox.classList.add("tooltip", "font-s", "cor-0");
     tooltipBox.innerText = this.text;

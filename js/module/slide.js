@@ -32,10 +32,11 @@ export class Slide {
   }
 
   onEnd(event) {
-    const pointerPosition =
-      event.type === "mouseup"
-        ? this.wrapper.removeEventListener("mousemove", this.onMove)
-        : this.wrapper.removeEventListener("touchmove", this.onMove);
+    if (event.type === "mouseup") {
+      this.wrapper.removeEventListener("mousemove", this.onMove);
+    } else {
+      this.wrapper.removeEventListener("touchmove", this.onMove);
+    }
 
     this.dist.finalPosition = this.dist.movePosition;
     this.transition(true);

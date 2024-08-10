@@ -1,10 +1,8 @@
-import debounce from "./debounce.js";
-
 export default class AnimaScroll {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.windowMetade = window.innerHeight * 0.9;
-    this.checkDistance = debounce(this.checkDistance.bind(this), 50);
+    this.checkDistance = this.checkDistance.bind(this);
   }
 
   getDistance() {

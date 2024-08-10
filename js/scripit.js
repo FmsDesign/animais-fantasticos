@@ -50,9 +50,11 @@ const menuhamburger = new MenuHamburger(
   "[data-menu='button']",
   "[data-menu='lista']"
 );
+menuhamburger.init();
 // menuhamburger.init(); iniciei a classe no constructor como exemplo
 
 const horario = new Horario("[data-semana]", "aberto");
+horario.init();
 
 const slide = new SlideNav(".slide", ".wrapper");
 slide.init();
